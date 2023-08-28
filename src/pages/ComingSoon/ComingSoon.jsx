@@ -7,15 +7,15 @@ import comingSoonGIF from '@assets/your-gif.gif';
 const ComingSoon = () => {
   const [showGif, setShowGif] = useState(false);
 
-  useEffect(() => {
-    // Display the GIF after 5 seconds
-    const timer = setTimeout(() => {
-      setShowGif(true);
-    }, 5000);
+  // useEffect(() => {
+  //   // Display the GIF after 5 seconds
+  //   const timer = setTimeout(() => {
+  //     setShowGif(true);
+  //   }, 5000);
 
-    // Clear the timer when the component unmounts
-    return () => clearTimeout(timer);
-  }, []);
+  //   // Clear the timer when the component unmounts
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div className="coming-soon-container">

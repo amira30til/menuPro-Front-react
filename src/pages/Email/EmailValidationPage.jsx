@@ -129,7 +129,7 @@ const PageValidationEmail = ({ verifie, emailVerified }) => {
             <p style={{ margin: '4px 0' }}>
               Explorez fonctionnalités uniques et avantages exceptionnels.
             </p>
-            <p style={styleEmail}>tilouchamira@gmail.com</p>
+            <p style={styleEmail}></p>
           </div>
         </div>
       </div>

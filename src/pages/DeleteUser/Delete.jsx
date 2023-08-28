@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import logoo from "@assets/logoo.png";
-import './delete.css';
+import "./delete.css";
+import { useParams } from "react-router-dom";
 
 const Delete = () => {
   const [email, setEmail] = useState("");
@@ -26,21 +27,14 @@ const Delete = () => {
   };
 
   const handleButtonClick = async () => {
-    try {
-      // example : http://apiUrl/api/users/<email>?deletedAccount=true&deleteWithData=false
-      const response = await axios.delete(`/api/users/${email}`, {
-        params : {
-          deleteAccount : deleteAccount,
-          deleteWithData : deleteWithData
-        }
-      });
+    console.log("Submiiiiit");
 
-      console.log(response.data);
-      // Handle success or show a success message to the user
-    } catch (error) {
-      console.error(error);
-      // Handle error or show an error message to the user
-    }
+    await axios
+      .delete(`http://localhost:3000/users/delete/${email}`, {params : {
+       password:password
+      }})
+      .then((response) => resolve({ success: true, record: response.data }))
+      .catch((error) => resolve({ success: false, error }));
   };
 
   return (
@@ -86,6 +80,6 @@ const Delete = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Delete;
