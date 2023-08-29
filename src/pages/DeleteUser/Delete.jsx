@@ -30,7 +30,7 @@ const Delete = () => {
     console.log("Submiiiiit");
 
     await axios
-      .delete(`http://localhost:3000/users/delete/${email}`, {params : {
+      .delete(`https://api.menupro.tn/users/delete/${email}`, {params : {
        password:password
       }})
       .then((response) => resolve({ success: true, record: response.data }))

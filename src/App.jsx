@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ComingSoon,
   PageValidationEmail,
   EmailVerifiedPage,
   Delete,
-} from '@pages';
+} from "@pages";
 
 function App() {
   const [emailVerified, setEmailVerified] = useState(false);
@@ -17,24 +17,15 @@ function App() {
     }, 3000);
   }, []);
 
-  const verifieCode = 'your-verification-code';
+  const verifieCode = "your-verification-code";
 
   return (
     <Router>
-      <div className='App'>
+      <div className="App">
         <Routes>
-          <Route
-            path='/'
-            element={
-              <PageValidationEmail
-                verifie={verifieCode}
-                emailVerified={emailVerified}
-              />
-            }
-          />
-          <Route path='/verified' element={<EmailVerifiedPage />} />
-          <Route path='/coming' element={<ComingSoon />} />
-          <Route path='/delete' element={<Delete />} />
+          <Route path="/" element={<ComingSoon />} />
+          <Route path="/verified" element={<PageValidationEmail />} />
+          <Route path="/delete" element={<Delete />} />
         </Routes>
       </div>
     </Router>
